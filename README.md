@@ -87,7 +87,8 @@ pnpm test
 
 ## Despliegue
 
-La aplicación está desplegada en Vercel y puedes acceder a ella en: [https://gestion-productos.vercel.app](https://gestion-productos.vercel.app)
+La aplicación está desplegada en Vercel y puedes acceder a ella en: 
+https://products-admin-react-9pksahugp-npochettinos-projects.vercel.app/
 
 ## Mejoras futuras
 
