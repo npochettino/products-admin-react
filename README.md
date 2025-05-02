@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gestión de Productos
 
-## Getting Started
+Esta aplicación permite gestionar productos, visualizarlos en una lista, filtrarlos y ordenarlos según diferentes criterios.
 
-First, run the development server:
+## Características
 
-```bash
+- Crear productos con código, nombre, descripción y cantidad
+- Visualizar lista de productos
+- Eliminar productos
+- Ordenar productos por código, nombre, cantidad y fecha de creación
+- Filtrar productos por nombre
+- Persistencia de datos usando localStorage
+- Diseño responsivo para móvil y desktop
+- Notificaciones con toast
+
+## Tecnologías utilizadas
+
+- **Next.js 14**: Framework de React con App Router
+- **TypeScript**: Para tipado estático
+- **Zustand**: Para manejo de estado global
+- **TailwindCSS**: Para estilos
+- **Shadcn/UI**: Componentes de UI accesibles
+- **Jest & Testing Library**: Para pruebas unitarias
+
+## Decisiones técnicas
+
+### Zustand vs Context API
+
+Elegí Zustand para el manejo de estado por su simplicidad y facilidad de uso. A diferencia del Context API, Zustand:
+
+- No requiere providers anidados
+- Tiene persistencia incorporada con middleware
+- Permite actualizaciones parciales del estado sin re-renderizados innecesarios
+
+### Estructura de carpetas
+
+\`\`\`
+/app - Páginas de Next.js con App Router
+/components - Componentes reutilizables
+/lib - Utilidades y store
+/types - Tipos de TypeScript
+\`\`\`
+
+### Persistencia de datos
+
+Utilicé el middleware `persist` de Zustand para guardar automáticamente el estado en localStorage, lo que permite que los datos persistan después de recargar la página.
+
+## Instalación
+
+1. Clona el repositorio:
+\`\`\`bash
+git clone https://github.com/tu-usuario/gestion-productos.git
+cd gestion-productos
+\`\`\`
+
+2. Instala las dependencias:
+\`\`\`bash
+npm install
+# o
+yarn install
+# o
+pnpm install
+\`\`\`
+
+3. Inicia el servidor de desarrollo:
+\`\`\`bash
 npm run dev
-# or
+# o
 yarn dev
-# or
+# o
 pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pruebas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para ejecutar las pruebas:
 
-## Learn More
+\`\`\`bash
+npm run test
+# o
+yarn test
+# o
+pnpm test
+\`\`\`
 
-To learn more about Next.js, take a look at the following resources:
+## Despliegue
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+La aplicación está desplegada en Vercel y puedes acceder a ella en: [https://gestion-productos.vercel.app](https://gestion-productos.vercel.app)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Mejoras futuras
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Implementar edición de productos
+- Añadir categorías a los productos
+- Implementar paginación para grandes volúmenes de datos
+- Añadir modo oscuro
+- Implementar más pruebas de integración
